@@ -1,0 +1,8 @@
+# ignore all credentials
+*.json
+# ignore all test files
+__*
+src/__*
+src/quickstart
+# dumb apple shit
+.DS_Store
