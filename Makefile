@@ -1,9 +1,6 @@
-CC=gcc
-CLFAGS=-Wall
+# extremely barebones - idk if i even wanna use C for this
+CFLAGS += $(shell pkg-config --cflags json-c)
+LDFLAGS += $(shell pkg-config --libs json-c)
 
-SRC_FILES=src
-
-main:	
-	$(CC) $(CLFAGS) -o /bin/schedule $(SRC_FILES)
-test:
-	@echo $(MAKE)
+main:
+	gcc src/*.c

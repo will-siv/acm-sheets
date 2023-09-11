@@ -1,4 +1,4 @@
-from src import refresh
+import refresh
 import time
 import json
 
