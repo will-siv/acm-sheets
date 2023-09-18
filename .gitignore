@@ -6,3 +6,5 @@ src/__*
 src/quickstart
 # dumb apple shit
 .DS_Store
+# vim files
+*.swp
