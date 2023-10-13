@@ -66,6 +66,8 @@ def hourminute24(t):
 def person_info(values, file):
   ret = []
   for val in values:
+    if len(val) < 5: # 
+      break
     dret = {
       "name": '',
       "email": '',
@@ -80,9 +82,8 @@ def person_info(values, file):
         "date": '', #character
         "time": [] #start,end
       }
-      if (len(SECTION.split(' ')) > 2):
+      if ('online' in SECTION.lower()):
         dret['isOnline'] = True
-
       d , t = SECTION.split(" ")[0:2]
       if d == "Th":
         d = "R"
@@ -98,14 +99,14 @@ def person_info(values, file):
     dret['classes'] = val[4]
 
     ret.append(dret)
-  json.dump(ret, file)
+  json.dump(ret, file, indent=2)
 
 def main():
   '''
   TODO: call refresh every 24 hours, and write output to file
   '''
   SPREADSHEET_ID = '1yixBkRbiC_Af2G9RhysgC_t0WeUp_ah6FN-fi88bnKQ'
-  RANGE = "D3:H26"
+  RANGE = "D3:H40" # allows a maximum of 36 names
   FILE_NAME = "data.json"
 
   while True:
