@@ -3,4 +3,4 @@ CFLAGS += $(shell pkg-config --cflags json-c)
 LDFLAGS += $(shell pkg-config --libs json-c)
 
 main:
-	gcc src/*.c
+	gcc src/screen/*.c
