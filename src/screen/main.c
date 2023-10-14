@@ -16,11 +16,11 @@ int main() {
 
   while (1) {
     clear_screen();
-    template_cover();
-    refresh_screen();
     update_name_class();
+    refresh_screen();
     sleep(30);
     update_name_time();
+    refresh_screen();
     sleep(30);
   }
 }

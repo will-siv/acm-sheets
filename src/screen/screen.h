@@ -15,6 +15,7 @@ char buff[CHAR_WIDTH * CHAR_HEIGHT];
 /* names at char 4, 57 */
 /* maximum classes char width is 110 */
 
+/* rewrites all characters in buffer to screen */
 void refresh_screen() {
   int i, j;
   for (i = 0; i < CHAR_HEIGHT; i++) {
@@ -57,8 +58,6 @@ void vert_line(int x, int y) {
 }
 
 void template_cover() {
-  int i;
-
   vert_line(26, 7);
   vert_line(53, 4);
   vert_line(79, 7);
@@ -73,11 +72,14 @@ void template_cover() {
   paste(57, 5, "Talk about individual CS/IT/IS/YWCC classes");
 }
 
+/* should I just pass the raw json of the data and go from there? which is easier... */
 void update_name_class() {
+  template_cover();
   
 }
 
 void update_name_time() {
+  template_cover();
 
 }
 
