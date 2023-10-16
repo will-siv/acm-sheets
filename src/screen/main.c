@@ -9,17 +9,23 @@ controller function - stores important values and calls appropriate functions ba
 
 #include "screen.h"
 
-int main() {
+int main(int argc, char **argv) {
+  json_object *root;
+  if (argc != 2) {
+    perror("Usage: ./program {json}");
+  }
+  root = json_object_from_file(argv[1]);
   printf("Starting Tutoring Display....\n");
   sleep(3);
   printf("\033[H\033[J");
 
+
   while (1) {
     clear_screen();
-    update_name_class();
+    update_name_class(root);
     refresh_screen();
     sleep(30);
-    update_name_time();
+    update_name_time(root);
     refresh_screen();
     sleep(30);
   }
